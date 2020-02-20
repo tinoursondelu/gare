@@ -5,7 +5,7 @@ import com.gare.gare.travel.persistence.entity.TravelEntity;
 import javax.persistence.*;
 
 @Entity
-@Table(name = "wagons")
+@Table(name = "travelsteps")
 public class TravelStepEntity {
 
     @Id

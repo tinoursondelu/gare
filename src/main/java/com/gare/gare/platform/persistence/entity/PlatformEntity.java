@@ -1,10 +1,12 @@
 package com.gare.gare.platform.persistence.entity;
 
 import com.gare.gare.station.persistence.entity.StationEntity;
+import com.gare.gare.train.persistance.entity.TrainEntity;
 
 import javax.persistence.*;
 
 @Entity
+@Table(name = "platforms")
 public class PlatformEntity {
 
     @Id
@@ -35,4 +37,11 @@ public class PlatformEntity {
         this.label = label;
     }
 
+    public StationEntity getStation() {
+        return station;
+    }
+
+    public void setStation(StationEntity station) {
+        this.station = station;
+    }
 }

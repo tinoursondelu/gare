@@ -1,5 +1,6 @@
 package com.gare.gare.train.persistance.entity;
 
+import com.gare.gare.travel.persistence.entity.TravelEntity;
 import com.gare.gare.wagon.persistance.entity.WagonEntity;
 
 import javax.persistence.*;
@@ -12,6 +13,9 @@ public class TrainEntity {
     @Id
     @GeneratedValue(strategy =  GenerationType.AUTO)
     private int id;
+
+    @OneToMany(mappedBy = "train")
+    private List<TravelEntity> travels;
 
     @OneToMany(mappedBy = "train")
     private List<WagonEntity> wagons = new ArrayList<>();
@@ -41,4 +45,7 @@ public class TrainEntity {
     public void setReference(String reference) {
         this.reference = reference;
     }
+
+
+
 }

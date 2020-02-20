@@ -14,4 +14,11 @@ public interface TravelRepository  extends CrudRepository<TravelEntity, Integer>
     @Query("SELECT t  FROM TravelEntity t")
     Optional<TravelEntity> findByTrain(Integer train);
 
+    @Query("SELECT t  FROM TravelEntity t JOIN FETCH t.travelSteps ts WHERE t.id = :id")
+    Optional<TravelEntity> findByIdFetchTravelSteps(int id);
+
+
+
+
+
 }

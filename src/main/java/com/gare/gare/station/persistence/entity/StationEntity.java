@@ -1,11 +1,13 @@
 package com.gare.gare.station.persistence.entity;
 
-import javafx.application.Platform;
+
+import com.gare.gare.platform.persistence.entity.PlatformEntity;
 
 import javax.persistence.*;
 import java.util.List;
 
 @Entity
+@Table(name = "stations")
 public class StationEntity {
 
     @Id
@@ -16,10 +18,8 @@ public class StationEntity {
     @Column(name = "station_name")
     private String stationName;
 
-    @OneToMany(mappedBy = "request", cascade = CascadeType.ALL, fetch = FetchType.EAGER)
-    @JoinColumn(name = "platform_id")
-    private List<Platform> platforms;
-
+    @OneToMany(mappedBy = "station")
+    private List<PlatformEntity> platforms;
 
     public int getId() {
         return id;
