@@ -11,6 +11,7 @@ public interface PlatformRepository  extends CrudRepository<PlatformEntity, Inte
 
     List<PlatformEntity> findAll();
 
+
     @Query("SELECT p  FROM PlatformEntity p")
     Optional<PlatformEntity> findById(Integer id);
 

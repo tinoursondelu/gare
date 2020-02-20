@@ -9,7 +9,7 @@ import java.util.Optional;
 
 public interface TrainRepository extends CrudRepository<TrainEntity, Integer> {
 
-    Iterable<TrainEntity> findAll();
+    List<TrainEntity> findAll();
 
     Optional<TrainEntity> findById(int id);
 

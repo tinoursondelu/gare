@@ -1,5 +1,6 @@
 package com.gare.gare.travel_step.persistance.entity;
 
+import com.gare.gare.platform.persistence.entity.PlatformEntity;
 import com.gare.gare.travel.persistence.entity.TravelEntity;
 
 import javax.persistence.*;
@@ -15,10 +16,12 @@ public class TravelStepEntity {
     @ManyToOne
     @JoinColumn(name = "travel_id")
     private TravelEntity travel;
-    //
+
     private String date;
-//
-//    private PlatformEntity platform;
+
+    @ManyToOne
+    @JoinColumn(name ="platform_id" )
+   private PlatformEntity platform;
 
 
     public int getId() {

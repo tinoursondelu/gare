@@ -2,8 +2,10 @@ package com.gare.gare.platform.persistence.entity;
 
 import com.gare.gare.station.persistence.entity.StationEntity;
 import com.gare.gare.train.persistance.entity.TrainEntity;
+import com.gare.gare.travel_step.persistance.entity.TravelStepEntity;
 
 import javax.persistence.*;
+import java.util.List;
 
 @Entity
 @Table(name = "platforms")
@@ -20,7 +22,7 @@ public class PlatformEntity {
     @ManyToOne(targetEntity = StationEntity.class, fetch = FetchType.EAGER)
     @JoinColumn(name = "station_id", referencedColumnName = "id", nullable = false)
     private StationEntity station;
-
+    
     public int getId() {
         return id;
     }
